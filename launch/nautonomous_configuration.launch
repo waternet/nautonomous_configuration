@@ -10,7 +10,7 @@
 	</include>
 	<include file="$(find zed_wrapper)/launch/zed.launch" if="$(arg camera)">
 	</include>
-	<include file="$(find ublox_gps)/launch/ublox_gps_papaverweg.launch" unless="$(arg simulate)">
+	<include file="$(find nautonomous_navigation_gps)/launch/ublox_gps_papaverweg.launch" unless="$(arg simulate)">
 		<arg name="log" value="$(arg logging)" />
 	</include>
 
