@@ -1,14 +1,16 @@
 <launch>
 	<!-- vim: set ft=xml noet : -->
-	<arg name="simulate" value="true"/>
-	<arg name="routing" value="true"/>
+	<arg name="simulate" value="false"/>
+	<arg name="routing" value="false"/>
 	<arg name="logging" value="false"/>
-	<arg name="camera" value="true"/>
+	<arg name="camera" value="false"/>
 	<!--sensors-->
 	<include file="$(find nautonomous_navigation_configuration)/launch/mavros/px4.launch" unless="$(arg simulate)">
 		<arg name="log" value="$(arg logging)" />
 	</include>
 	<include file="$(find zed_wrapper)/launch/zed.launch" if="$(arg camera)">
+	</include>
+	<include file="$(find nautonomous_navigation_configuration)/launch/laser/depthtolaser.launch" unless="$(arg camera)">
 	</include>
 	<include file="$(find nautonomous_navigation_gps)/launch/ublox_gps_papaverweg.launch" unless="$(arg simulate)">
 		<arg name="log" value="$(arg logging)" />
