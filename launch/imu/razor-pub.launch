@@ -1,0 +1,14 @@
+<launch>
+  	<arg name="razor_config_file" default="$(find nautonomous_configuration)/launch/imu/razor.yaml"/>
+  	<node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">
+			
+				<!-- Inputs -->
+					
+				<!-- Parameters -->
+				<rosparam file="$(arg razor_config_file)" command="load"/>
+					
+				<!-- Outputs -->
+				<remap from="imu" to="/imu/razor" />
+
+		</node>
+</launch>
