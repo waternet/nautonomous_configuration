@@ -1,6 +1,6 @@
 <launch>
 <!-- vim: set ft=xml noet : -->
-	<arg name="simulate" value="false"/>
+	<arg name="simulate" value="true"/>
 	<arg name="routing" value="true"/>
 	<arg name="logging" value="false"/>
 	<arg name="camera" value="false"/>
