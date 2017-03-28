@@ -6,6 +6,8 @@
 	<arg name="camera" value="false"/>
 	<arg name="output_comm" value="true"/>
 	<arg name="rviz" value="false"/>
+	<arg name="param_identification" value="true"/>
+
 
 	<node name="rviz_visualizer" pkg="rviz" type="rviz" args="-d $(find nautonomous_configuration)/launch/rviz/nautonomous_default.rviz" if="$(arg rviz)"/>
 
@@ -29,6 +31,8 @@
 	<include file="$(find nautonomous_configuration)/launch/pose/ekf_with_gps.launch"/>
 	<include file="$(find nautonomous_configuration)/launch/map/coenhaven.launch"/>
 	<include file="$(find nautonomous_navigation_transform)/launch/nautonomous_transforms.launch"/>
+
+	<node name="rosbag_parameters_identification" pkg="rosbag" type="record" args="record -o $(find nautonomous_navigation_configuration)/rosbag_parameters_identification /robot_pose_ekf/odom_combined /odom_combined /manual_propulsion /autonomous_propulsion /multiplexed_propulsion /independent_inputs /motor_inputs" output="screen" if="$(arg param_identification)"/>
 	
 	
 </launch>
