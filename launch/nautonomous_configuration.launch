@@ -1,10 +1,10 @@
 <launch>
 <!-- vim: set ft=xml noet : -->
-	<arg name="simulate" value="false"/>
-	<arg name="routing" value="true"/>
+	<arg name="simulate" value="true"/>
+	<arg name="routing" value="false"/>
 	<arg name="logging" value="false"/>
 	<arg name="camera" value="false"/>
-	<arg name="output_comm" value="true"/>
+	<arg name="output_comm" value="false"/>
 	<arg name="rviz" value="false"/>
 	<arg name="param_identification" value="true"/>
 
@@ -32,7 +32,9 @@
 	<include file="$(find nautonomous_configuration)/launch/map/coenhaven.launch"/>
 	<include file="$(find nautonomous_navigation_transform)/launch/nautonomous_transforms.launch"/>
 
-	<node name="rosbag_parameters_identification" pkg="rosbag" type="record" args="record -o $(find nautonomous_navigation_configuration)/rosbag_parameters_identification /robot_pose_ekf/odom_combined /odom_combined /manual_propulsion /autonomous_propulsion /multiplexed_propulsion /independent_inputs /motor_inputs" output="screen" if="$(arg param_identification)"/>
+	<include file="$(find nautonomous_actuation_synchronizer)/launch/independent_inputs_publisher.launch" if="$(arg param_identification)"/>
+
+	<node name="rosbag_parameters_identification" pkg="rosbag" type="record" args="record -o $(find nautonomous_configuration)/rosbag_parameters_identification /robot_pose_ekf/odom_combined /odom_combined /manual_propulsion /autonomous_propulsion /multiplexed_propulsion /independent_inputs /motor_inputs" output="screen" if="$(arg param_identification)"/>
 	
 	
 </launch>
