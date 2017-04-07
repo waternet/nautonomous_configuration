@@ -1,7 +1,7 @@
 <launch>
 <!-- vim: set ft=xml noet : -->
 	<arg name="simulate" value="false"/>
-	<arg name="routing" value="true"/>
+	<arg name="routing" value="false"/>
 	<arg name="logging" value="false"/>
 	<arg name="camera" value="false"/>
 	<arg name="output_comm" value="true"/>
@@ -29,6 +29,9 @@
 	<include file="$(find nautonomous_configuration)/launch/pose/ekf_with_gps.launch"/>
 	<include file="$(find nautonomous_configuration)/launch/map/coenhaven.launch"/>
 	<include file="$(find nautonomous_navigation_transform)/launch/nautonomous_transforms.launch"/>
-	
+
+	<include file="$(find nautonomous_actuation_synchronizer)/launch/independent_inputs_publisher.launch" if="$(arg param_identification)"/>
+
+	<node name="rosbag_parameters_identification" pkg="rosbag" type="record" args="record -o $(find nautonomous_configuration)/rosbag_parameters_identification /robot_pose_ekf/odom_combined /odom_combined /manual_propulsion /autonomous_propulsion /multiplexed_propulsion /independent_inputs /motor_inputs /gps/fix /gps/fix_velocity /gps/navposllh /gps/navsol /gps/navstatus /gps/navvelned /gps/odom" output="screen" if="$(arg param_identification)"/>	
 	
 </launch>
