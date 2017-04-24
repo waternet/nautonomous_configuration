@@ -5,7 +5,7 @@
 	<arg name="logging" value="false"/>
 	<arg name="camera" value="false"/>
 	<arg name="output_comm" value="false"/>
-	<arg name="rviz" value="true"/>
+	<arg name="rviz" value="false"/>
 
 	<node name="rviz_visualizer" pkg="rviz" type="rviz" args="-d $(find nautonomous_configuration)/launch/rviz/nautonomous_default.rviz" if="$(arg rviz)"/>
 
