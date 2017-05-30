@@ -34,7 +34,6 @@
 	<include file="$(find nautonomous_configuration)/launch/map/coenhaven.launch" if="$(arg simulate)"/>
 
 	<include file="$(find nautonomous_configuration)/launch/pose/ekf_with_gps.launch"/>
-
 	<!-- <include file="$(find nautonomous_configuration)/launch/map_amsterdam/amsterdam.launch"/> -->
 	
 	<include file="$(find nautonomous_navigation_transform)/launch/nautonomous_transforms.launch"/>	
