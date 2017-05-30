@@ -31,6 +31,7 @@
 	<!-- <include file="$(find rosbridge_server)/launch/rosbridge_tcp.launch"/> -->
 
 	<include file="$(find nautonomous_map_cropper)/launch/map_cropper.launch" unless="$(arg simulate)"/>
+	<include file="$(find nautonomous_map_server)/launch/nautonomous_map_server.launch" unless="$(arg simulate)"/>
 	<include file="$(find nautonomous_configuration)/launch/map/coenhaven.launch" if="$(arg simulate)"/>
 
 	<include file="$(find nautonomous_configuration)/launch/pose/ekf_with_gps.launch"/>
