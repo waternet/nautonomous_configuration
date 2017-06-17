@@ -1,10 +1,13 @@
 <launch>
 <!-- vim: set ft=xml noet : -->
 	<arg name="simulate" value="true"/>
-	<arg name="rviz" value="true"/>
-	<arg name="navigation" value="true"/> 
 
-	<arg name="routing" value="false"/>
+	<arg name="rviz" value="true"/>
+
+	<arg name="navigation" value="true"/> 
+	<arg name="canals" value="true"/>
+	<arg name="routing" value="true"/>
+
 	<arg name="logging" value="false"/>
 	<arg name="camera" value="false"/>
 	<arg name="output_comm" value="false"/>
@@ -14,10 +17,17 @@
 	<include file="$(find nautonomous_actuation_simulator)/launch/propulsion_sim.launch" if="$(arg simulate)"/>	
 
 	<include file="$(find ublox_gps)/launch/ublox_gps.launch" unless="$(arg simulate)"/>
+	<include file="$(find nautonomous_gps_adapter)/launch/utm_adapter.launch" unless="$(arg simulate)"/>
 
 	<include file="$(find nautonomous_configuration)/launch/imu/razor-pub.launch" unless="$(arg simulate)"/>
-	<include file="$(find nautonomous_navigation_odometry)/launch/coenhaven_gps_odometry.launch" unless="$(arg simulate)"/>
+
+	<include file="$(find nautonomous_navigation_odometry)/launch/canals_utm_odometry.launch" unless="$(arg simulate)"/>
 	<include file="$(find nautonomous_configuration)/launch/planner/move_base.launch" if="$(arg navigation)"/>
+
+	<include file="$(find nautonomous_map_cropper)/launch/passive_map_cropper.launch" if="$(arg navigation)"/>
+	<include file="$(find nautonomous_map_server)/launch/nautonomous_map_server.launch" if="$(arg navigation)"/>
+
+	<include file="$(find nautonomous_operation_action)/launch/action_server_client_canals.launch" if="$(arg simulate)"/>
 	<include file="$(find nautonomous_operation_action)/launch/action_client.launch" if="$(arg routing)"/>
 
 	<include file="$(find nautonomous_actuation_selector)/launch/output_multiplexer.launch"/>
@@ -28,7 +38,6 @@
 	<include file="$(find rosbridge_server)/launch/rosbridge_tcp.launch" if="$(arg bridge)"/>
 
 	<include file="$(find nautonomous_configuration)/launch/pose/ekf_with_gps.launch"/>
-	<include file="$(find nautonomous_configuration)/launch/map/coenhaven.launch"/>
 	<include file="$(find nautonomous_navigation_transform)/launch/nautonomous_transforms.launch"/>	
 	
 	<node name="rviz_visualizer" pkg="rviz" type="rviz" args="-d $(find nautonomous_configuration)/launch/rviz/nautonomous_default.rviz" if="$(arg rviz)"/>
