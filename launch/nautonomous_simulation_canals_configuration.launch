@@ -13,6 +13,8 @@
 	<arg name="output_comm" value="false"/>
 	<arg name="bridge" value="false"/>
 
+	<include file="$(find nautonomous_navigation_pathfinder)/launch/find_path_test.launch" if="$(arg navigation)"/>
+
 	<include file="$(find nautonomous_configuration)/launch/laser/depthtolaser.launch" if="$(arg camera)"/>
 	<include file="$(find nautonomous_actuation_simulator)/launch/propulsion_sim.launch" if="$(arg simulate)"/>	
 
@@ -26,7 +28,7 @@
 
 	<include file="$(find nautonomous_map_cropper)/launch/passive_map_cropper.launch" if="$(arg navigation)"/>
 	<include file="$(find nautonomous_map_server)/launch/nautonomous_map_server.launch" if="$(arg navigation)"/>
-
+	
 	<include file="$(find nautonomous_operation_action)/launch/action_server_client_canals.launch" if="$(arg simulate)"/>
 	<include file="$(find nautonomous_operation_action)/launch/action_client.launch" if="$(arg routing)"/>
 

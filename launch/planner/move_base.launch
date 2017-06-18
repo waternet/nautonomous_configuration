@@ -16,11 +16,8 @@
 		<rosparam file="$(find nautonomous_configuration)/config/costmap/common_costmap_params.yaml" command="load" ns="local_costmap" />
 		<rosparam file="$(find nautonomous_configuration)/config/costmap/local_costmap_params.yaml" command="load" />
 		<rosparam file="$(find nautonomous_configuration)/config/costmap/global_costmap_params.yaml" command="load" />
-		<!--rosparam file="$(find nautonomous_configuration)/config/planner/base_local_planner_params.yaml" command="load" /-->
-		<param name="planner_patience" value="10"/>
-		<param name="base_global_planner" value="global_planner/GlobalPlanner"/>
-		<param name="planner_frequency" value="-1.0"/>
-		<param name="controller_frequency" value="20.0"/>
+		<rosparam file="$(find nautonomous_configuration)/config/planner/base_local_planner_params.yaml" command="load" />
+		<param name="controller_frequency" value="10.0"/>
 		<remap from="cmd_vel" to="/autonomous_propulsion"/>
 		<remap from="odom" to="odom_combined"/>
 	</node>
