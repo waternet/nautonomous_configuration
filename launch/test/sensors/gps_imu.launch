@@ -1,0 +1,6 @@
+<launch>
+
+
+	<!--include file="$(find nautonomous_navigation_pathfinder)/launch/find_path_test.launch" if="$(arg navigation)"/-->
+
+</launch>
