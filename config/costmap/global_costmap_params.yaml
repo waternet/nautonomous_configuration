@@ -7,3 +7,4 @@ global_costmap:
   static_map: true
   visualize_potential: true
   controller_frequency: 10.0
+  transform_tolerance: 0.5
