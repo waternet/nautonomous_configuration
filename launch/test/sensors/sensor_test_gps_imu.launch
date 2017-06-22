@@ -7,9 +7,9 @@
     
     <include file="$(find nautonomous_configuration)/launch/pose/ekf_with_gps.launch"/>
 	
-    <node pkg="rosbag" type="record" name="rosbag_gps" args="record -o /home/waternet/waternet/nautonomous/rosbag/test_sensors/gps/gps_ --node=/gps" output="screen"/>
-    <node pkg="rosbag" type="record" name="rosbag_imu" args="record -o /home/waternet/waternet/nautonomous/rosbag/test_sensors/imu/imu_ --node=/imu_node" output="screen"/>
-    <node pkg="rosbag" type="record" name="rosbag_utm" args="record -o /home/waternet/waternet/nautonomous/rosbag/test_sensors/utm/utm_ --node=/utm_adapter" output="screen"/>
-    <node pkg="rosbag" type="record" name="rosbag_tf" args="record -o /home/waternet/waternet/nautonomous/rosbag/test_sensors/tf/tf_ tf tf_static" output="screen"/>
+    <node pkg="rosbag" type="record" name="rosbag_gps" args="record -o $(find nautonomous_configuration)/launch/test/sensors/gps_ --node=/gps" output="screen"/>
+    <node pkg="rosbag" type="record" name="rosbag_imu" args="record -o $(find nautonomous_configuration)/launch/test/sensors/imu_ --node=/imu_node" output="screen"/>
+    <node pkg="rosbag" type="record" name="rosbag_utm" args="record -o $(find nautonomous_configuration)/launch/test/sensors/utm_ --node=/utm_adapter" output="screen"/>
+    <node pkg="rosbag" type="record" name="rosbag_tf" args="record -o $(find nautonomous_configuration)/launch/test/sensors/tf_ tf tf_static" output="screen"/>
 
 </launch>
