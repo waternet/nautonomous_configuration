@@ -1,6 +1,6 @@
 free_thresh: 0.196
-gps_origin: [52.404434, 4.863055]
-image: coenhaven.png
+gps_origin: [52.341726, 4.915569]
+image: amsterdam_cropped.png
 map_bottom: 5798303
 map_left: 622457
 map_right: 632457
