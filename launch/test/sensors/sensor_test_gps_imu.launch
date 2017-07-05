@@ -1,8 +1,0 @@
-<launch>
-
-	<include file="$(find ublox_gps)/launch/ublox_gps_debug.launch"/>
-    <include file="$(find nautonomous_configuration)/launch/imu/razor-pub.launch"/>
-	
-    <node pkg="rosbag" type="record" name="rosbag_gps" args="record -o $(find nautonomous_configuration)/launch/test/sensors/gps /diagnostics /gps/aidalm /gps/aideph /gps/aidhui /gps/fix /gps/fix_velocity /gps/navclock /gps/navposllh /gps/navsol /gps/navstatus /gps/navsvinfo /gps/navvelned" output="screen"/>
-    <node pkg="rosbag" type="record" name="rosbag_imu" args="record -o $(find nautonomous_configuration)/launch/test/sensors/imu /diagnostics /imu/razor /imu_node/parameter_descriptions /imu_node/parameter_updates" output="screen"/>
-</launch>
