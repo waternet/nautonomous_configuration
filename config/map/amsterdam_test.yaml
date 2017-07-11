@@ -1,0 +1,10 @@
+free_thresh: 0.196
+image: amsterdam_test.png
+map_bottom: -1000
+map_left: -1000
+map_right: 1000
+map_top: 1000
+negate: 0
+occupied_thresh: 0.65
+origin: [-1000.0, -1000.0, 0.0]
+resolution: 1
