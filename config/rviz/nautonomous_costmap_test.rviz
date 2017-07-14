@@ -118,12 +118,12 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: false
-      Enabled: true
+      Enabled: false
       Name: Map
       Topic: /costmap_node/costmap/costmap
       Unreliable: false
       Use Timestamp: false
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz/Polygon
       Color: 25; 255; 0
@@ -182,12 +182,12 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 255
+      Max Intensity: 194
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 1
       Name: PointCloud2
       Position Transformer: XYZ
       Queue Size: 10
@@ -199,7 +199,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -215,9 +215,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 7.41698694
+      Max Intensity: -0.47743398
       Min Color: 0; 0; 0
-      Min Intensity: -4.89420557
+      Min Intensity: -5.46266651
       Name: LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -274,24 +274,24 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.78991604
+      Distance: 33.187973
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.32724607
-        Y: 0.586851358
-        Z: 1.31621659
+        X: 1.64593041
+        Y: 4.78847933
+        Z: 0.67778337
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.854797244
+      Pitch: 0.949796617
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.26317549
+      Yaw: 0.0799910501
     Saved: ~
 Window Geometry:
   Displays:
