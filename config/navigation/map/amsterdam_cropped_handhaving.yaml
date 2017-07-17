@@ -1,5 +1,5 @@
 free_thresh: 0.196
-image: /home/waternet/waternet/nautonomous/workspaces/default/src/WaternetNautonomous/src/nautonomous_configuration/config/map/amsterdam_cropped_handhaving.png
+image: /home/waternet/waternet/nautonomous/workspaces/default/src/WaternetNautonomous/src/nautonomous_configuration/config/navigation/map/amsterdam_cropped_handhaving.png
 map_bottom: 5766.0
 map_left: 5747.0
 map_right: 6569.0
