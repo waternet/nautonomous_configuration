@@ -1,0 +1,10 @@
+footprint: [[-0.325, -0.325], [-0.325, 0.325], [0.325, 0.325], [0.46, 0.0], [0.325, -0.325]]
+
+plugins: 
+    - {name: static_map,       type: "costmap_2d::StaticLayer"}
+    - {name: obstacles,        type: "costmap_2d::VoxelLayer"}
+
+publish_frequency: 10.0
+obstacles:
+    observation_sources: base_scan
+    base_scan: {data_type: LaserScan, sensor_frame: /scan_link, clearing: true, marking: true, topic: /base_scan, inf_is_valid: true, raytrace_range: 20.0, obstacle_range: 15.0}
