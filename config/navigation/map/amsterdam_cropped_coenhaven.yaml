@@ -1,5 +1,5 @@
 free_thresh: 0.196
-image: /home/waternet/waternet/nautonomous/workspaces/default/src/WaternetNautonomous/src/nautonomous_configuration/config/map/amsterdam_cropped_coenhaven.png
+image: amsterdam_cropped_coenhaven.png
 map_bottom: 715.0
 map_left: 4241.0
 map_right: 4369.0
