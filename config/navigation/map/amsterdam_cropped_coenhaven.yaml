@@ -1,5 +1,9 @@
 free_thresh: 0.196
+<<<<<<< HEAD:config/map/amsterdam_cropped_coenhaven.yaml
 image: /home/waternet/waternet/nautonomous/workspaces/costmap_Test/src/WaternetNautonomous/src/nautonomous_configuration/config/map/amsterdam_cropped_coenhaven.png
+=======
+image: amsterdam_cropped_coenhaven.png
+>>>>>>> master:config/navigation/map/amsterdam_cropped_coenhaven.yaml
 map_bottom: 715.0
 map_left: 4241.0
 map_right: 4369.0

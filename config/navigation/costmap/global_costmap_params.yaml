@@ -1,0 +1,14 @@
+global_costmap:
+  global_frame: /map
+<<<<<<< HEAD:config/costmap/global_costmap_params.yaml
+  robot_base_frame: base_link
+  update_frequency: 5.0
+  static_map: true
+=======
+  robot_base_frame: base_footprint
+
+  static_map: true
+
+  visualize_potential: true
+  controller_frequency: 10.0
+>>>>>>> master:config/navigation/costmap/global_costmap_params.yaml
