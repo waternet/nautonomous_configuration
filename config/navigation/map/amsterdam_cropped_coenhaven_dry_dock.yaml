@@ -1,0 +1,6 @@
+free_thresh: 0.196
+image: amsterdam_cropped_coenhaven_dry_dock.png
+negate: 0
+occupied_thresh: 0.65
+origin: [626706.4, 5807658.25, -0.042754678284248004]
+resolution: 0.5
