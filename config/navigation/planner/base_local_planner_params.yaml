@@ -8,4 +8,13 @@ TrajectoryPlannerROS:
   acc_lim_x: 2.5
   acc_lim_y: 2.5
 
-  holonomic_robot: true
+  holonomic_robot: false
+
+  dwa: false                          #I prefer trajectory rollout as I can see it in rviz
+
+  xy_goal_tolerance: 5                #default is 10cm but I think AMCL makes it too giggly for this to be safe (* resolution (=0.5 now))
+  yaw_goal_tolerance: 6.2             #default is 0.05 rad (~3 degrees), I changed it to 5
+
+  controller_frequency: 10.0
+  sim_granularity: 0.5
+  sim_time: 5.0
